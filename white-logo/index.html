@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1280, initial-scale=1.0">
+    
+    <title>Mink Architects</title>
+    
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" type="text/css">
+
+    <script type="text/javascript" src="//use.typekit.net/mwm1qtm.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  </head>
+
+  <body>
+    <div class="background-slider">
+      <div class="background current" style="url(assets/img/backgrounds/1.jpg) center no-repeat;"></div>
+      <div class="background next" style="url(assets/img/backgrounds/2.jpg) center no-repeat;"></div>
+    </div>
+    <div class="sidebar-hitbox">
+      <div class="sidebar">
+        <div class="logo-container">
+          <div class="logo"></div>
+        </div>
+        <div class="navigation">
+          <ul>
+            <li><a href="./">Home</a></li>
+            <li><a href="projects">Projects</a></li>
+            <li><a href="clientele">Clientele</a></li>
+            <li><a href="awards">Awards</a></li>
+            <li><a href="media">Media</a></li>
+            <li><a href="us">Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      var sidebarAnimDuration = 300;
+
+      /* Starting Animations */
+      $(".sidebar").delay(2000).animate({
+        left: "-20%"
+      }, sidebarAnimDuration, "easeOutQuad");
+
+      /* Hitbox */
+      $(".sidebar-hitbox").mouseenter(function() {
+        $(".sidebar").filter(":not(:animated)").animate({
+          left: 0
+        }, sidebarAnimDuration, "easeOutQuad", function() {
+          $(this).addClass("active");
+        });
+      });
+
+      $(".sidebar-hitbox").mouseleave(function() {
+        $(".sidebar").filter(":not(:animated)").animate({
+          left: "-20%"
+        }, sidebarAnimDuration, "easeInQuad", function() {
+          $(this).removeClass("active");
+        });
+      });
+
+      var timedSlide;
+      var autoSlideTimeout = 8000;
+      var backgroundAnimDuration = 2000;
+
+      var backgrounds = new Array();
+      backgrounds[0] = "1.jpg";
+      backgrounds[1] = "2.jpg";
+      backgrounds[2] = "3.jpg";
+      backgrounds[3] = "4.jpg";
+
+      var current = 0;
+
+      function backgroundSlide() {
+        if(current < backgrounds.length - 1) {
+          $(".background-slider .next").css("background-image", "url(assets/img/backgrounds/" + backgrounds[current + 1] + ")");
+          $(".background-slider .next").animate({
+            opacity: 1
+          }, backgroundAnimDuration, "easeInOutQuad", function() {
+            $(".background-slider .current").css("background-image", "url(assets/img/backgrounds/" + backgrounds[current + 1] + ")");
+            $(".background-slider .next").css("opacity", "0");
+            current++;
+            timedSlide = setTimeout(function() {
+              backgroundSlide();
+            }, autoSlideTimeout);
+          });
+        } else {
+          $(".background-slider .next").css("background-image", "url(assets/img/backgrounds/" + backgrounds[0] + ")");
+          $(".background-slider .next").animate({
+            opacity: 1
+          }, backgroundAnimDuration, "easeInOutQuad", function() {
+            $(".background-slider .current").css("background-image", "url(assets/img/backgrounds/" + backgrounds[0] + ")");
+            $(".background-slider .next").css("opacity", "0");
+            current = 0;
+            timedSlide = setTimeout(function() {
+              backgroundSlide();
+            }, autoSlideTimeout);
+          });
+        }
+      }
+
+      timedSlide = setTimeout(function() {
+        backgroundSlide();
+      }, autoSlideTimeout);
+    });
+  </script>
+</html>

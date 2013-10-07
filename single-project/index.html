@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1280, initial-scale=1.0">
+    
+    <title>Mink Architects</title>
+    
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../assets/css/style.css" type="text/css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" type="text/css">
+  </head>
+
+  <body class="single-project">
+      <div class="slide-essentials">
+        <a href="../projects" class="close-button">X</a>
+        <div class="right-align">
+          <div class="slide-dots">
+            <ul>
+              <li class="selected"></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <section class="slide">
+        <div class="first-slide-indicator">Scroll Down to View Portfolio</div>
+        <div class="vertical-alignment">
+          <div class="title">
+            Highland Road Bungalow
+          </div>
+          <div class="subtitle">
+            Highland Road, Singapore
+          </div>
+          <div class="subtitle">
+            Far East Organization
+          </div>
+        </div>
+      </section>
+
+      <section class="slide">
+        <div class="background" style="background: url(../assets/img/projects/highland-road/1.jpg) center no-repeat;"></div>
+      </section> 
+
+      <section class="slide">
+        <div class="background" style="background: url(../assets/img/projects/highland-road/2.jpg) center no-repeat;"></div>
+      </section> 
+
+      <section class="slide">
+        <div class="background" style="background: url(../assets/img/projects/highland-road/3.jpg) center no-repeat;"></div>
+      </section>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../assets/js/jquery.panelSnap.js"</script>
+    <script type="text/javascript" src="//use.typekit.net/mwm1qtm.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <script src="../assets/js/blur.min.js"></script>
+    <script>
+      $('body').panelSnap({
+        onSnapFinish: function(){
+          $('.slide-dots li').removeClass('selected');
+
+          $('.slide-dots li').eq($('section.active').index()-1).addClass('selected');
+        },
+        directionThreshold: 20,
+        slideSpeed: 150
+      });
+
+      $(document).ready(function() {
+        // blur.js
+        $(".slide").blurjs({
+          source: "body",
+          radius: 10,
+          overlay: "rgba(0, 0, 0, .7)"
+        });
+      });
+    </script>
+  </body>
+</html>

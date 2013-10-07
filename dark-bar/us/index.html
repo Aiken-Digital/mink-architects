@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1280, initial-scale=1.0">
+    
+    <title>Mink Architects</title>
+    
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../assets/css/style.css" type="text/css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" type="text/css">
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../assets/js/jquery.screwdefaultbuttons.min.js"></script>
+    <script type="text/javascript" src="//use.typekit.net/mwm1qtm.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  </head>
+
+  <body>
+    <div class="sidebar">
+      <div class="logo-container">
+        <div class="logo"></div>
+      </div>
+      <div class="navigation">
+        <ul>
+          <li><a href="../">Home</a></li>
+          <li><a href="../projects">Projects</a></li>
+          <li><a href="../clientele">Clientele</a></li>
+          <li><a href="../awards">Awards</a></li>
+          <li><a href="../media">Media</a></li>
+          <li><a href="../us">Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sidebar-display"></div>
+
+    <div class="content-display">
+      <div class="body">
+        <div class="about">
+          <p>
+            Mink Architects was founded in 1999 by Mink Tan, the Principal Interior Designer and Architect. Graduating from the University of
+            Sydney in Australia in 1990, Mink started his architectural practice 23 years ago and subsequently founded his own practice in
+            interior design 14 years ago.
+          </p>
+          <p>
+            His design vision is to continually benchmark the beautiful natural styles by acquiring inspirations from Asia’s most sought after
+            landscapes to fuse together with modern contemporary to form true works of art. His profound sense of Asian Diaspora drives the
+            firms search for the spirit of New Asia by synthesizing the various fragments from the vastly differing Asia’s social and historical
+            landscape.
+          </p>
+          <p>
+            "Our own theories on architecture rely on the fundamentals of design and vice versa. It has to do with the laws of symmetry,
+            geometry, science and many other aspects. We get down to the essence to create individuality, functional, valuable and well-defined
+            spaces. Creation of spaces is the greatest epitome."
+          </p>
+          <p>
+            Together with a team of 20+ committed, talented and diverse design staff, Mink and his team are constantly on the lookout for new
+            possibilities that can push forward his notion of Super Asia - A fusion of old and new Asia merged with influences from East and West.
+          </p>
+          <p>
+            Mink Architects has an accomplished diverse portfolio of projects that range across 5-star hotels, luxury residences, resorts and
+            F&amp;B outlets for clients including the Fullerton Hotel Group, Fraser Residence Group, Far East Organization and projects such as
+            the Kempinski, JW Marriot, Crowne Plaza Hotel, YTL Corporation and Silvian Imberg as well as various Showflats for Far East developments.
+          </p>
+        </div>
+        <div class="contact-form">
+          <!--<div id="map-canvas"></div>-->
+          <form>
+            <div class="form-row">
+              <label>Name *</label>
+              <input type="text" name="name" id="form-name">
+            </div>
+            <div class="form-row">
+              <label>Email Address *</label>
+              <input type="text" name="email" id="form-email-address">
+            </div>
+            <div class="form-row">
+              <label>Message</label>
+              <textarea name="message" id="form-message"></textarea>
+            </div>
+            <div class="form-row">
+              <input type="submit" value="Send">
+            </div>
+          </form>
+        </div>
+
+        <div class="contact-details">
+          <ul>
+            <li><strong>Mink Architects</strong></li>
+            <li>258 Middle Road</li>
+            <li>Singapore 188987</li>
+          </ul>
+          <ul>
+            <li><a href="mailto:studio@minkarchitects.com">studio@minkarchitects.com</a></li>
+            <li>tel: +65 6372 2468</li>
+            <li>fax: +65 6225 9776</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+  <script>
+    var map;
+    function initialize() {
+      var mapOptions = {
+        zoom: 18,
+        center: new google.maps.LatLng(1.301396, 103.850490),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+      map = new google.maps.Map(document.getElementById('map-canvas'),
+        mapOptions);
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+  </script>
+</html>
