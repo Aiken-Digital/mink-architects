@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=1280, initial-scale=1.0'>
+    
+    <title>Mink Architects: Clientele</title>
+    
+    <link rel='stylesheet' href='../assets/css/bootstrap.min.css' type='text/css'>
+    <link rel='stylesheet' href='../assets/css/style.css' type='text/css'>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' type='text/css'>
+    
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+    <script src='../assets/js/jquery.screwdefaultbuttons.min.js'></script>
+    <script type='text/javascript' src='//use.typekit.net/mwm1qtm.js'></script>
+    <script type='text/javascript'>try{Typekit.load();}catch(e){}</script>
+
+    <script>
+      $(document).ready(function() {
+        $('input:checkbox').screwDefaultButtons({ 
+          image: 'url(../assets/img/checkboxes.png)',
+          width:   19,
+          height:  15
+        });
+
+        var animDuration = 200;
+
+        /* Projects Tab Navigation */
+        $('#architecture-selector').click(function() {
+          $('.tab-content:not(#architecture-tab)').hide(0);
+          $('.tab-content:not(#architecture-tab)').removeClass('selected');
+          $('.tab-selector:not(#architecture-selector)').removeClass('selected');
+
+          $('#architecture-tab').show(0);
+          $('#architecture-tab').addClass('selected');
+          $('#architecture-selector').addClass('selected');
+        });
+
+        $('#interior-design-selector').click(function() {
+          $('.tab-content:not(#interior-design-tab)').hide(0);
+          $('.tab-content:not(#interior-design-tab)').removeClass('selected');
+          $('.tab-selector:not(#interior-design-selector)').removeClass('selected');
+
+          $('#interior-design-tab').show(0);
+          $('#interior-design-tab').addClass('selected');
+          $('#interior-design-selector').addClass('selected');
+        });
+
+        $('#master-planning-selector').click(function() {
+          $('.tab-content:not(#master-planning-tab)').hide(0);
+          $('.tab-content:not(#master-planning-tab)').removeClass('selected');
+          $('.tab-selector:not(#master-planning-selector)').removeClass('selected');
+
+          $('#master-planning-tab').show(0);
+          $('#master-planning-tab').addClass('selected');
+          $('#master-planning-selector').addClass('selected');
+        });
+
+        $('.filter-selector .heading').click(function() {
+          if($(this).parent().hasClass('expanded')) {
+            $(this).parent().filter(':not(:animated)').animate({
+              height: 30 + 'px'
+            }, 300, function() {
+              $(this).removeClass('expanded');
+              $('.expand', this).removeClass('expanded');
+            });
+          } else {
+            $(this).parent().filter(':not(:animated)').animate({
+              height: 105 + 'px'
+            }, 300, function() {
+              $(this).addClass('expanded');
+              $('.expand', this).addClass('expanded');
+            });
+          }
+        });
+      });
+
+      function move(id, spd) {
+        var obj = document.getElementById(id);
+        var max = -obj.offsetHeight + obj.parentNode.offsetHeight
+        var top = parseInt(obj.style.top);
+
+        if((spd > 0 && top <= 0) || (spd < 0 && top >= max)) {
+          obj.style.top = top + spd + "px";
+          move.to = setTimeout(function(){ move(id, spd); }, 20);
+        } else {
+          obj.style.top = (spd > 0 ? 0 : max) + "px";
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class='sidebar'>
+      <div class='logo-container'>
+        <div class='logo'></div>
+      </div>
+      <div class='navigation'>
+        <ul>
+          <li><a href='../'>Home</a></li>
+          <li><a href='../projects'>Projects</a></li>
+          <li><a href='../clientele'>Clientele</a></li>
+          <li><a href='../awards'>Awards</a></li>
+          <li><a href='../media'>Media</a></li>
+          <li><a href='../us'>Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class='sidebar-display'></div>
+
+    <div class='content-display'>
+      <div class='body'>
+        <!-- <a href='../' class='close-button'>X</a> -->
+        <div class='clientele'>
+          <h1>Clientele</h1>
+          <p class='clientele-logos'>
+            <img src='../assets/img/clientele/marriot.png' class='marriot' alt='Marriot Hotels and Resorts' />
+            <img src='../assets/img/clientele/ihg.png' class='ihg' alt='IHG Group' />
+            <img src='../assets/img/clientele/kempinski.png' class='kempinski' alt='Kempinski Hotels & Resorts' />
+            <img src='../assets/img/clientele/indochine.png' class='indochine' alt='IndoChine' />
+            <img src='../assets/img/clientele/far-east.png' class='far-east' alt='Far East Organization' />
+          </p>
+          <p>
+            <ul>
+              <li>Far East Organization</li>
+              <li>Sino Group (HK)</li>
+              <li>YTL Corporation (Malaysia)</li>
+              <li>PT. Grand Indonesia</li>
+              <li>PT. Wisma Nusantara</li>
+              <li>Headway Real Estate</li>
+              <li>Shaanxi Defang Chang’an Property</li>
+              <li>IHG (Intercontinental Hotel Group)</li>
+              <li>Kempinski Hotel Group</li>
+              <li>Frasers Hospitality</li>
+              <li>Oakwood International</li>
+              <li>JW Marriott</li>
+              <li>Pullman Hotel (Accor Hotel Group)</li>
+              <li>The Fullerton Hotel Group</li>
+              <li>IndoChine Group</li>
+              <li>Tunglok Group</li>
+              <li>Harry’s Bar</li>
+              <li>Family of Tan Sri Francis Yeoh (Malaysia)</li>
+              <li>The Birla Family (India)</li>
+              <li>The Sivasailam Family (India)</li>
+            </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=1280, initial-scale=1.0'>
+    
+    <title>Mink Architects: Awards</title>
+    
+    <link rel='stylesheet' href='../assets/css/bootstrap.min.css' type='text/css'>
+    <link rel='stylesheet' href='../assets/css/style.css' type='text/css'>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' type='text/css'>
+    
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+    <script src='../assets/js/jquery.screwdefaultbuttons.min.js'></script>
+    <script type='text/javascript' src='//use.typekit.net/mwm1qtm.js'></script>
+    <script type='text/javascript'>try{Typekit.load();}catch(e){}</script>
+
+    <script>
+      $(document).ready(function() {
+        $('input:checkbox').screwDefaultButtons({ 
+          image: 'url(../assets/img/checkboxes.png)',
+          width:   19,
+          height:  15
+        });
+
+        var animDuration = 200;
+
+        /* Projects Tab Navigation */
+        $('#architecture-selector').click(function() {
+          $('.tab-content:not(#architecture-tab)').hide(0);
+          $('.tab-content:not(#architecture-tab)').removeClass('selected');
+          $('.tab-selector:not(#architecture-selector)').removeClass('selected');
+
+          $('#architecture-tab').show(0);
+          $('#architecture-tab').addClass('selected');
+          $('#architecture-selector').addClass('selected');
+        });
+
+        $('#interior-design-selector').click(function() {
+          $('.tab-content:not(#interior-design-tab)').hide(0);
+          $('.tab-content:not(#interior-design-tab)').removeClass('selected');
+          $('.tab-selector:not(#interior-design-selector)').removeClass('selected');
+
+          $('#interior-design-tab').show(0);
+          $('#interior-design-tab').addClass('selected');
+          $('#interior-design-selector').addClass('selected');
+        });
+
+        $('#master-planning-selector').click(function() {
+          $('.tab-content:not(#master-planning-tab)').hide(0);
+          $('.tab-content:not(#master-planning-tab)').removeClass('selected');
+          $('.tab-selector:not(#master-planning-selector)').removeClass('selected');
+
+          $('#master-planning-tab').show(0);
+          $('#master-planning-tab').addClass('selected');
+          $('#master-planning-selector').addClass('selected');
+        });
+
+        $('.filter-selector .heading').click(function() {
+          if($(this).parent().hasClass('expanded')) {
+            $(this).parent().filter(':not(:animated)').animate({
+              height: 30 + 'px'
+            }, 300, function() {
+              $(this).removeClass('expanded');
+              $('.expand', this).removeClass('expanded');
+            });
+          } else {
+            $(this).parent().filter(':not(:animated)').animate({
+              height: 105 + 'px'
+            }, 300, function() {
+              $(this).addClass('expanded');
+              $('.expand', this).addClass('expanded');
+            });
+          }
+        });
+      });
+
+      function move(id, spd) {
+        var obj = document.getElementById(id);
+        var max = -obj.offsetHeight + obj.parentNode.offsetHeight
+        var top = parseInt(obj.style.top);
+
+        if((spd > 0 && top <= 0) || (spd < 0 && top >= max)) {
+          obj.style.top = top + spd + "px";
+          move.to = setTimeout(function(){ move(id, spd); }, 20);
+        } else {
+          obj.style.top = (spd > 0 ? 0 : max) + "px";
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class='sidebar'>
+      <div class='logo-container'>
+        <div class='logo'></div>
+      </div>
+      <div class='navigation'>
+        <ul>
+          <li><a href='../'>Home</a></li>
+          <li><a href='../projects'>Projects</a></li>
+          <li><a href='../clientele'>Clientele</a></li>
+          <li><a href='../awards'>Awards</a></li>
+          <li><a href='../media'>Media</a></li>
+          <li><a href='../us'>Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class='sidebar-display'></div>
+
+    <div class='content-display'>
+      <div class='body'>
+        <!-- <a href='../' class='close-button'>X</a> -->
+        <div class='awards'>
+          <h1>Awards</h1>
+          <ul>
+            <span class='year'>2012</span>
+            <li>
+              Silver Award for Crowne Plaza (Interior) Design<br />
+              <span class='type'>IIDA</span>
+            </li>
+            <li>
+              Silver Award for Lin An Hangzhou (Architecture)<br />
+              <span class='type'>IDA</span>
+            </li>
+            <li>
+              Silver Award for Lin An Hangzhou (Interior Design)<br />
+              <span class='type'>IDA</span>
+            </li>
+            <li>
+              Silver Award for N65 Residence<br />
+              <span class='type'>IDA</span>
+            </li>
+            <li>
+              Honorable Mention for Armani Villas<br />
+              <span class='type'>IDA</span>
+            </li>
+            <li>
+              Honorable Mention for Silvian Imberg<br />
+              <span class='type'>IDA</span>
+            </li>
+            <li>
+              Honorable Mention for Xi Xi Clubhouse<br />
+              <span class='type'>IDA</span>
+            </li>
+          </ul>
+          <ul>
+            <span class='year'>2011</span>
+            <li>
+              Silver Award for Toto Sales Gallery<br />
+              <span class='type'>IIDA</span>
+            </li>
+            <li>
+              Merit Award for Mei Lin Townhouse No. 3<br />
+              <span class='type'>IIDA</span>
+            </li>
+          </ul>
+          <ul>
+            <span class='year'>2000 - 2005</span>
+            <li>
+              Heritage Award for The Fullerton Waterboat House<br />
+              <span class='type'>URA, 2005</span>
+            </li>
+            <li>
+              Merit Award for The 'Esplanade Office'<br />
+              <span class='type'>SIA, 2003</span>
+            </li>
+            <li>
+              Silver Award or Shanghai Sally Club<br />
+              <span class='type'>SIA, 2002</span>
+            </li>
+            <li>
+              Bronze Award for The ‘Moroccan House’<br />
+              <span class='type'>SIA, 2002</span>
+            </li>
+            <li>
+              Gold Award for Newsroom Bar<br />
+              <span class='type'>SIA, 2001</span>
+            </li>
+            <li>
+              Gold Award for IndoChine<br />
+              <span class='type'>SIA, 2000</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

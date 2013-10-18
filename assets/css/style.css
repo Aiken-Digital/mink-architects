@@ -137,7 +137,6 @@ div.styledCheckbox {
   .content-display .about {
     color: #999;
     font-size: .875em; /* 14px / 16px */
-    font-weight: 300;
     padding-bottom: 15px;
     margin-bottom: 30px;
     border-bottom: 1px solid #777;
@@ -152,16 +151,22 @@ div.styledCheckbox {
     display: inline-block;
     overflow: hidden;
     border: none !important;
+    opacity: .8;
   }
 
-  .content-display .map-link:hover > .overlay {
-    top: 0;
-    opacity: 1;
+    .content-display .map-link:hover > .overlay {
+      top: 0;
+      opacity: 1;
 
-    -webkit-transform: rotate(180deg);
-    -moz-transform: rotate(180deg);
-    transform: rotate(180deg);
-  }
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      transform: rotate(180deg);
+      
+      -webkit-transition: all .5s ease-in-out;
+      -moz-transition: all .5s ease-in-out;
+      -o-transition: all .5s ease-in-out;
+      transition: all .5s ease-in-out;
+    }
 
   .content-display .map-link .overlay {
     position: absolute;
@@ -225,7 +230,7 @@ div.styledCheckbox {
     .content-display .contact-form label {
       display: block;
       font-size: .75em; /* 12px / 16px */
-      font-weight: 300;
+      font-weight: 400;
       color: #999;
       letter-spacing: 2px;
       text-transform: uppercase;
@@ -238,7 +243,6 @@ div.styledCheckbox {
       width: 100%;
       color: #999;
       font-size: .875em; /* 14px / 16px */
-      font-weight: 300;
       outline: none;
 
       -webkit-border-radius: 3px;
@@ -284,7 +288,6 @@ div.styledCheckbox {
       height: 150px;
       color: #999;
       font-size: .875em; /* 14px / 16px */
-      font-weight: 300;
       outline: none;
       resize: none;
 
@@ -315,7 +318,6 @@ div.styledCheckbox {
     }
 
     .content-display .contact-details li {
-      font-weight: 300;
       font-size: .875em; /* 14px / 16px */
       margin-bottom: 3px;
     }
@@ -504,8 +506,7 @@ div.styledCheckbox {
         width: 50%;
         margin-bottom: 30px;
         font-size: .875em; /* 14px / 16px */
-        color: #aaa;
-        font-weight: 300;
+        color: #656565;
       }
 
         .content-display .results-area .results li a {
@@ -576,6 +577,163 @@ div.styledCheckbox {
       -moz-border-radius: 10px;
       border-radius: 10px;
     }
+    
+    .content-display .clientele {
+      position: relative;
+      margin: 30px 0 0;
+      color: #999;
+      overflow: hidden;
+    }
+    
+      .content-display .clientele h1 {
+        display: inline-block;
+      	font: 300 2.125em 'Open Sans', Helvetica, Arial, sans-serif; /* 34px / 16px */
+      	color: #fff;
+      	letter-spacing: 4px;
+      	text-transform: uppercase;
+      	margin-bottom: 40px;
+      }
+      
+      .content-display .clientele p {
+      	font-size: .875em; /* 14px / 16px */
+      	margin-bottom: 40px;
+      }
+      
+      .content-display .clientele p:last-child {
+      	margin-bottom: 0;
+      }
+      
+        .content-display .clientele .clientele-logos img {
+          width: auto;
+          height: 26px;
+        }
+        
+        .content-display .clientele .clientele-logos .marriot {
+          margin: 0 20px 0 30px;
+        }
+        
+        .content-display .clientele .clientele-logos .ihg {
+          width: 64px;
+          height: auto;
+          margin-right: 10px;
+        }
+        
+        .content-display .clientele .clientele-logos .kempinski {
+          width: auto;
+          height: 44px;
+          margin-right: 12px;
+        }
+        
+        .content-display .clientele .clientele-logos .indochine {
+          width: auto;
+          height: 32px;
+          margin-right: 20px;
+        }
+        
+        .content-display .clientele .clientele-logos .far-east {
+          width: auto;
+          height: 42px;
+        }
+      
+        .content-display .clientele ul {
+          list-style: none;
+          font-size: .875em; /* 14px / 16px */
+          padding-left: 30px;
+        }
+        
+          .content-display .clientele ul li {
+          	margin-bottom: 7px;
+          }
+          
+      .content-display .clientele-logos {
+      	border-bottom: 1px solid #444;
+      	padding-bottom: 30px;
+      }
+      
+    .content-display .awards {
+      position: relative;
+      margin: 30px 0 0;
+      color: #999;
+      overflow: hidden;
+    }
+    
+      .content-display .awards h1 {
+        display: inline-block;
+      	font: 300 2.125em 'Open Sans', Helvetica, Arial, sans-serif; /* 34px / 16px */
+      	color: #fff;
+      	letter-spacing: 4px;
+      	text-transform: uppercase;
+      	margin-bottom: 40px;
+      }
+      
+      .content-display .awards p {
+      	font-size: .875em; /* 14px / 16px */
+      	margin-bottom: 40px;
+      }
+      
+      .content-display .awards p:last-child {
+      	margin-bottom: 0;
+      }
+      
+        .content-display .awards .clientele-logos img {
+          width: auto;
+          height: 26px;
+        }
+        
+        .content-display .awards .clientele-logos .marriot {
+          margin: 0 20px 0 30px;
+        }
+        
+        .content-display .awards .clientele-logos .ihg {
+          width: 64px;
+          height: auto;
+          margin-right: 10px;
+        }
+        
+        .content-display .awards .clientele-logos .kempinski {
+          width: auto;
+          height: 44px;
+          margin-right: 12px;
+        }
+        
+        .content-display .awards .clientele-logos .indochine {
+          width: auto;
+          height: 32px;
+          margin-right: 20px;
+        }
+        
+        .content-display .awards .clientele-logos .far-east {
+          width: auto;
+          height: 42px;
+        }
+      
+        .content-display .awards ul {
+          list-style: none;
+          font-size: .875em; /* 14px / 16px */
+          margin-bottom: 30px;
+          padding-left: 30px;
+        }
+        
+          .content-display .awards ul .year {
+            display: block;
+            color: #ddd;
+          	margin-bottom: 15px;
+          }
+        
+          .content-display .awards ul li {
+          	margin-bottom: 7px;
+          }
+          
+            .content-display .awards ul li .type {
+              font-size: .9285714286em; /* 13px / 14px */
+              font-style: italic;
+              color: #595959;
+            }
+          
+      .content-display .clientele-logos {
+      	border-bottom: 1px solid #444;
+      	padding-bottom: 30px;
+      }
 
 .single-project {
   position: absolute;
@@ -661,7 +819,7 @@ div.styledCheckbox {
         left: 0;
         text-align: center;
         font-size: .75em; /* 12px / 16px */
-        color: #555;
+        color: #777;
       }
 
         .slide .first-slide-indicator:after {
@@ -669,7 +827,7 @@ div.styledCheckbox {
           position: absolute;
           top: 25px;
           left: 49.5%;
-          border-top: 5px solid #fff;
+          border-top: 5px solid #aaa;
           border-left: 5px solid transparent;
           border-right: 5px solid transparent;
         }
@@ -686,7 +844,8 @@ div.styledCheckbox {
         text-align: center;
         font-size: 1.5em; /* 24px / 16px */
         font-weight: 600;
-        letter-spacing: 2px;
+        letter-spacing: 8px;
+        text-transform: uppercase;
         color: #ccc;
         margin-bottom: 12px;
       }
@@ -694,10 +853,9 @@ div.styledCheckbox {
       .slide .subtitle {
         display: block;
         text-align: center;
-        font-size: 1.125em; /* 18px / 16px */
-        font-weight: 300;
-        letter-spacing: 2px;
-        color: #ccc;
+        font-size: 1em; /* 16px / 16px */
+        color: #999;
+        line-height: 1.5;
         margin-bottom: 6px;
       }
 
@@ -733,7 +891,7 @@ div.styledCheckbox {
       position: relative;
       top: -200px;
       left: -270px;
-      border: 300px solid rgba(255, 255, 255, .75);
+      border: 300px solid rgba(0, 0, 0, .75);
       height: 128px;
       width: 128px;
       padding: 66px 66px 65px 65px;
@@ -759,7 +917,7 @@ div.styledCheckbox {
 
   .sidebar .navigation {
     height: 100%;
-    background: rgba(255, 255, 255, .75);
+    background: rgba(0, 0, 0, .75);
   }
 
     .sidebar .navigation ul {
@@ -774,7 +932,7 @@ div.styledCheckbox {
 
         .sidebar .navigation ul li a {
           font-weight: 400;
-          color: #555;
+          color: #999;
           font-size: .8125em; /* 13px / 16px */
           letter-spacing: 2px;
           text-transform: uppercase;
@@ -785,5 +943,6 @@ div.styledCheckbox {
         }
 
         .sidebar .navigation ul li a:hover {
-          color: #222;
+          color: #fff;
+          padding-left: 7px;
         }
