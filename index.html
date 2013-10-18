@@ -19,10 +19,14 @@
     <div class="opening-curtain">
       <div class="curtain-top">
         <div class="logo">
-          <img src="assets/img/logo.png">
+          <div class="circle">
+            <div id="m">m</div>
+            <div id="i">i</div>
+            <div id="n">n</div>
+            <div id="k">k</div>
+          </div>
         </div>
       </div>
-      <div class="curtain-bottom"></div>
     </div>
 
     <div class="background-slider">
@@ -53,10 +57,13 @@
   <script>
     $(document).ready(function() {
       var curtainDelay = 2000;
-      var curtainAnimDuration = 500;
+      var curtainAnimDuration = 1000;
       var openSidebarDelay = 200;
       var hideSidebarDelay = 2000;
       var sidebarAnimDuration = 300;
+      var seedAnimDuration = 1000;
+      var seedInterval = 300;
+      var seedHoldDuration = 2000;
 
       $(".sidebar").filter(":not(:animated)").animate({
         left: "-20%"
@@ -64,9 +71,9 @@
         $(this).removeClass("active");
       });
 
-      curtainDelay = setTimeout(function() {
-        openSesame();
-      }, 2000);  
+      setTimeout(function() {
+        sesameSeed();
+      }, 500);  
 
       /* Hitbox */
       $(".sidebar-hitbox").mouseenter(function() {
@@ -78,18 +85,54 @@
         closeSidebar();
       });
 
+      function sesameSeed() {
+        $(".circle").animate({
+          opacity: "1"
+        }, seedAnimDuration, "easeInQuint");
+
+        setTimeout(function() {
+          $("#m").animate({
+            opacity: "1"
+          }, seedAnimDuration, "easeOutQuint");
+        }, seedInterval);
+
+        setTimeout(function() {
+          $("#i").animate({
+            opacity: "1"
+          }, seedAnimDuration, "easeOutQuint");
+        }, seedInterval*2);
+
+
+        setTimeout(function() {
+          $("#n").animate({
+            opacity: "1"
+          }, seedAnimDuration, "easeOutQuint");
+        }, seedInterval*3);
+
+
+        setTimeout(function() {
+          $("#k").animate({
+            opacity: "1"
+          }, seedAnimDuration, "easeOutQuint", function() {
+            setTimeout(function() {
+              openSesame();
+            }, seedHoldDuration);
+          });
+        }, seedInterval*4);
+      }
+
       function openSesame() {
         $(".curtain-top").animate({
-          top: "-75%"
-        }, curtainAnimDuration, "easeInQuint");
-
-        $(".curtain-bottom").animate({
-          top: "100%"
-        }, curtainAnimDuration, "easeInQuint", function() {
+          opacity: "0"
+        }, curtainAnimDuration, "easeOutQuint", function() {
           $(".opening-curtain").remove();
 
           launchSidebar = setTimeout(function() {
             openSidebar();
+            
+            timedSlide = setTimeout(function() {
+              backgroundSlide();
+            }, autoSlideTimeout);
           }, openSidebarDelay);
 
           hideSidebar = setTimeout(function() {
@@ -155,10 +198,6 @@
           });
         }
       }
-
-      timedSlide = setTimeout(function() {
-        backgroundSlide();
-      }, autoSlideTimeout);
     });
   </script>
 </html>

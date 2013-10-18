@@ -85,33 +85,63 @@ div.styledCheckbox {
 }
 
   .opening-curtain .curtain-top {
+    display: table;
     position: relative;
     top: 0;
-    height: 50%;
+    height: 100%;
     width: 100%;
     background: rgba(255, 255, 255, .9);
   }
 
   .opening-curtain .logo {
-    position: absolute;
-    bottom: -64px;
-    width: 100%;
+    display: table-cell;
+    vertical-align: middle;
     text-align: center;
   }
 
-    .opening-curtain .logo img {
+    .opening-curtain .logo .circle {
       position: relative;
       display: inline-block;
       z-index: 1001;
+      background: rgba(0, 0, 0, .7);
+      height: 128px;
+      width: 128px;
+      opacity: 0;
+
+      -webkit-border-radius: 64px;
+      -moz-border-radius: 64px;
+      border-radius: 64px;
     }
 
-  .opening-curtain .curtain-bottom {
-    position: relative;
-    top: 0%;
-    height: 50%;
-    width: 100%;
-    background: rgba(255, 255, 255, .9);
-  }
+      .opening-curtain .logo .circle #m,
+      .opening-curtain .logo .circle #i,
+      .opening-curtain .logo .circle #n,
+      .opening-curtain .logo .circle #k {
+        position: absolute;
+        top: 43px;
+        left: 25px;
+        font-size: 30px;
+        color: #fff;
+        font-weight: 100;
+        font-family: 'Helvetica Neue';
+        text-transform: uppercase;
+        opacity: 0;
+      }
+
+      .opening-curtain .logo .circle #i {
+        left: 52px;
+        text-transform: none;
+      }
+
+      .opening-curtain .logo .circle #n {
+        left: 59px;
+      }
+
+      .opening-curtain .logo .circle #k {
+        left: 82px;
+      }
+
+
 
 .content-display {
   position: fixed;
