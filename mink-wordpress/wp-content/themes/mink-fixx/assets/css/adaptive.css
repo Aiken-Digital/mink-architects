@@ -1,0 +1,11 @@
+@media screen and (min-device-width: 640px) and (max-device-width: 960px) {
+
+  body {
+    background: #000;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+}

@@ -10,6 +10,10 @@
 
   <script>
     $(document).ready(function() {
+      $("#menu-button").click(function() {
+        $("#mob-nav").toggle(0);
+      });
+      
       $('input:checkbox').screwDefaultButtons({ 
         image: 'url(<?php echo get_template_directory_uri(); ?>/assets/img/checkboxes.png)',
         width:   19,

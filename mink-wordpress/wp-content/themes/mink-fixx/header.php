@@ -3,7 +3,7 @@
 <html lang='en'>
   <head>
     <meta charset='UTF-8' />
-    <meta name='viewport' content='width=1280, initial-scale=1.0'>
+    <meta name="viewport" content="width=1280, initial-scale=1.0">
     
     <title>Mink Architects: <?php echo wp_title(""); ?></title>
 
@@ -15,6 +15,28 @@
   </head>
 
   <body>
+    <div class="topbar">
+      <div class="bar">
+        <div class="logo">
+          <a href="<?php echo home_url(); ?>">
+            <img src="<?php echo get_template_directory_uri();?>/assets/img/small-logo.png" />
+          </a>
+        </div>
+        <div id="menu-button">
+          menu
+        </div>
+      </div>
+      <div id="mob-nav" class="navigation">
+        <ul>
+          <li><a href="<?php echo home_url(); ?>/projects">Projects</a></li>
+          <li><a href="<?php echo home_url(); ?>/clientele">Clientele</a></li>
+          <li><a href="<?php echo home_url(); ?>/awards">Awards</a></li>
+          <li><a href="<?php echo home_url(); ?>/media">Media</a></li>
+          <li><a href="<?php echo home_url(); ?>/us">Us</a></li>
+        </ul>
+      </div>
+    </div>
+    
     <div class='sidebar'>
       <div class='logo-container'>
         <div class='logo'></div>

@@ -11,7 +11,7 @@ html {
 body {
   position: relative;
   background: url(../img/background.jpg) no-repeat;
-  background-size: 100%;
+  background-size: cover;
   font-size: 100%;
   height: 100%;
 }
@@ -28,6 +28,10 @@ body:after {
 
 a:hover {
   text-decoration: none;
+}
+
+#mobile {
+  display: none;
 }
 
 .close-button {
@@ -66,7 +70,7 @@ div.styledCheckbox {
     width: 100%;
     float: left;
     background-position: center !important;
-    background-size: 100% !important;
+    background-size: cover !important;
   }
 
   .background-slider .background.current {
@@ -890,6 +894,71 @@ div.styledCheckbox {
         margin-bottom: 6px;
       }
 
+.topbar {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #000;
+  z-index: 1001;
+  overflow: hidden;
+}
+
+  .topbar .bar {
+    overflow: hidden;
+  }
+
+  .topbar #menu-button {
+    float: right;
+    font-weight: 400;
+    color: #999;
+    font-size: .8125em; /* 13px / 16px */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin: 20px 20px 20px 0;
+  }
+
+  .topbar .logo {
+    float: left;
+    height: 42px;
+    width: 42px;
+    margin: 7px 20px;
+  }
+
+    .topbar .logo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+  .topbar .navigation {
+    display: none;
+    width: 100%;
+  }
+
+    .topbar .navigation ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .topbar .navigation li {
+      display: block;
+      text-align: center;
+      margin: 0 0 20px;
+      background: #000;
+    }
+
+    .topbar .navigation a {
+      font-weight: 400;
+      color: #999;
+      font-size: .8125em; /* 13px / 16px */
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
 .sidebar-hitbox {
   position: fixed;
   float: left;
@@ -977,3 +1046,73 @@ div.styledCheckbox {
           color: #fff;
           padding-left: 7px;
         }
+
+@media all and (max-width: 960px) {
+
+  .sidebar-hitbox,
+  .sidebar {
+    display: none;
+  }
+
+  .background-slider .background {
+    background-repeat: no-repeat !important;
+  }
+
+  .topbar {
+    display: block;
+  }
+
+  .content-display {
+    top: 58px;
+    left: 0;
+    width: 100%;
+    padding-bottom: 81px;
+    z-index: 1;
+  }
+
+    .content-display .body {
+      margin-top: 39px;
+    }
+
+    .content-display .contact-form,
+    .content-display .contact-details {
+      width: 100%;
+      padding: 0;
+    }
+
+      .content-display .contact-details ul {
+        padding: 0;
+      }
+
+  .clientele-logos {
+    text-align: center;
+  }
+
+  .clientele-logos img {
+    display: inline-block;
+    margin: 15px 20px !important;
+  }
+
+  #desktop {
+    display: none;
+  }
+
+  #mobile {
+    display: block;
+  }
+
+  #mobile h1 {
+    display: block;
+    font: 300 2.125em 'Open Sans', Helvetica, Arial, sans-serif; /* 34px / 16px */
+    color: #fff;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    text-align: left;
+  }
+
+    #mobile .results li {
+      width: 100%;
+    }
+
+}

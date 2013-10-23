@@ -24,7 +24,7 @@
       }
     }
   ?>
-  <body class="single-project" style="background: url(<?php echo $featured[0]; ?>) center no-repeat;">
+  <body class="single-project" style="background: #000 url(<?php echo $featured[0]; ?>) center no-repeat; background-size: cover;">
     <div class="slide-essentials">
       <a href="<?php echo home_url(); ?>/projects" class="close-button">X</a>
       <div class="right-align">
